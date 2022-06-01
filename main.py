@@ -1,6 +1,6 @@
 import numpy as np
 import gym
-from qlearning import dqn
+from ann import dqn
 #from ultis import plot_learning_curve
 
 if __name__ == "__main__":
@@ -36,7 +36,7 @@ if __name__ == "__main__":
             ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             actions.append(action)
             if(j % 10 == 0):
-                print("Episode {}: Action: {}, Total reward: {}., Learning rate: {:.7f}, Epsilon: {:.4f}, Loss: {}".format(j, actions, bot.reward, bot.alpha, bot.epsilon, bot.loss))
+                print("Episode {}: Action: {}, Total reward: {}., Epsilon: {:.4f}, Loss: {}".format(j, actions, bot.reward, bot.epsilon, bot.loss), ", Learning rate: ", bot.alpha)
                 actions.clear()
             j += 1
 
