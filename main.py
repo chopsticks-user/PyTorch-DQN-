@@ -36,7 +36,7 @@ if __name__ == "__main__":
             ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             actions.append(action)
             if(j % 10 == 0):
-                print("Episode {}: Action: {}, Total reward: {}., Learning rate: {:.7f}, Epsilon: {:.4f}".format(j, actions, bot.reward, bot.alpha, bot.epsilon))
+                print("Episode {}: Action: {}, Total reward: {}., Learning rate: {:.7f}, Epsilon: {:.4f}, Loss: {}".format(j, actions, bot.reward, bot.alpha, bot.epsilon, bot.loss))
                 actions.clear()
             j += 1
 
