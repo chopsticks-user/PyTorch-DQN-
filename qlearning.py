@@ -128,7 +128,7 @@ class dqn(nn.Module):
 
         loss = self.q_eval.loss(target, policy).to(self.q_eval.device)
         loss.backward()
-
+        self.q_eval.optimizer.step()
         ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         self.alpha *= self.alpha_decay_rate
 
