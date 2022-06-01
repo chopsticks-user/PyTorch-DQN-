@@ -60,6 +60,7 @@ class dqn(nn.Module):
         self.max_dup_rate = 0.9   #current input_space_size is 18
         self.epsilon_incr_rate = 1.1
         self.alpha_incr_rate = 0.25   #not being used yet
+        self.loss = 0.0
         ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     def transition(self, current_state, action, next_state, reward, done):
@@ -131,7 +132,7 @@ class dqn(nn.Module):
         self.q_eval.optimizer.step()
         ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         self.alpha *= self.alpha_decay_rate
-
+        self.loss = loss
 
         ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
