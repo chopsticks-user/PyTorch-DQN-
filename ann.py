@@ -22,7 +22,7 @@ class dqn(nn.Module):
         #use named_tuple
         #be mindful of NaN values
         #use T.save()
-        #only works for descrete action space
+        #only works with discrete action space
         #to net device instead of initializing new device
 
         if environment:
